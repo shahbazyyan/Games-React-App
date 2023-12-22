@@ -5,11 +5,11 @@ import { HiMoon, HiSun } from "react-icons/hi";
 import ThemeContext from "../context/ThemeContext";
 
 function Header() {
-  const {theme, setTheme} = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   useEffect(() => {
-   console.log(theme);
-  }, [])
+   setTheme(localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark"); 
+  }, [theme]);
 
   return (
     <>
@@ -27,11 +27,18 @@ function Header() {
           {theme === "light" ? (
             <HiMoon
               className="text-[35px] bg-slate-200 text-black p-1 rounded-full cursor-pointer"
-              onClick={() => setTheme("dark")}
+              onClick={() => {
+                setTheme("dark");
+                localStorage.setItem("theme", "dark");
+              }}
             />
           ) : (
-            <HiSun className="text-[35px] bg-slate-200 text-black p-1 rounded-full cursor-pointer"
-            onClick={() => setTheme("light")}
+            <HiSun
+              className="text-[35px] bg-slate-200 text-black p-1 rounded-full cursor-pointer"
+              onClick={() => {
+                setTheme("light");
+                localStorage.setItem("theme", "light");
+              }}
             />
           )}
         </div>
