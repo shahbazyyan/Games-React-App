@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import GenrealList from "../components/GenrealList";
 import GlobalAPI from "../apis/GlobalAPI";
 import Banner from "../components/Banner";
+import TreadingGames from "../components/TreadingGames";
+
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -24,7 +26,12 @@ function Home() {
           <GenrealList />
         </div>
         <div className="col-span-4 md:col-span-3">
-          {games?.length > 0 ? <Banner bannerGame={games[7]} /> : null}
+          {games?.length > 0 ? (
+            <div>
+              <Banner bannerGame={games[0]} />
+              <TreadingGames gameList={games}/>
+            </div>
+          ) : null}
         </div>
       </section>
     </>

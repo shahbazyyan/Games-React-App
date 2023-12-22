@@ -16,7 +16,7 @@ function GenrealList() {
   }, []);
 
   return (
-    <div>
+    <div className="m mr-2">
       <h2 className="text-[30px] font-bold dark:text-white">Genre</h2>
       {list.map((item, index) => (
         <div

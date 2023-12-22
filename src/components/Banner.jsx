@@ -1,14 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 function Banner({ bannerGame }) {
-  useEffect(() => {
-    console.log(bannerGame);
-  }, []);
-
+  
   return (
     <>
-      <section className="relative px-2">
-        <div className="absolute p-5 bottom-0 ">
+      <section className="relative">
+        <div className="absolute p-5 bottom-0 bg-gradient-to-t from-slate-900 to-transparent w-full overflow-hidden">
           <h2 className="text-[24px] font-bold text-white">
             {bannerGame.name}
           </h2>
