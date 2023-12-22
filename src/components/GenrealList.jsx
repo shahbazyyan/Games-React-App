@@ -4,7 +4,6 @@ import GlobalAPI from "../apis/GlobalAPI";
 function GenrealList() {
   function getGeneralList() {
     GlobalAPI.getListGenres.then((res) => {
-      console.log(res.data.results);
       setList(res.data.results);
     });
   }
