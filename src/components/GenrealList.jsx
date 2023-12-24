@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GlobalAPI from "../apis/GlobalAPI";
 
-function GenrealList() {
+function GenrealList({setGenresID, genreName}) {
   function getGeneralList() {
     GlobalAPI.getListGenres.then((res) => {
       setList(res.data.results);
@@ -17,10 +17,12 @@ function GenrealList() {
 
   return (
     <div className="m mr-2">
-      <h2 className="text-[30px] font-bold dark:text-white">Genre</h2>
+      <h2 className="text-[30px] font-bold dark:text-white">{}</h2>
       {list.map((item, index) => (
         <div
-          onClick={() => setActiveIndex(index)}
+          onClick={() => {setActiveIndex(index); setGenresID(item.id);
+          genreName(item.name)
+          }}
           className={`flex p-1 mb-2 items-center gap-2 cursor-pointer rounded-lg
           hover:bg-slate-400 group ${
             activeIndex === index ? "bg-gray-400  dark:bg-gray-600" : null
