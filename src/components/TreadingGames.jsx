@@ -26,7 +26,7 @@ function TreadingGames({ gameList }) {
 
   return (
     <section className="mt-5 relative items-center overflow-hidden">
-      <h1 className="font-bold text-[20px] dark:text-white">Trending Games</h1>
+      <h1 className="font-bold text-[25px] dark:text-white">Trending Games</h1>
       <div className="swiper-container" ref={swiperRef}>
         <div className="swiper-wrapper">
           {gameList.map((item, index) => (
@@ -36,7 +36,9 @@ function TreadingGames({ gameList }) {
                 alt={item.slug}
                 className="h-[270px] max-w-[200px] rounded-lg object-cover"
               />
-              <h2 className="text-center">{item.name}</h2>
+             
+              <h2 className="items-center dark:text-white mt-1">{item.name}</h2>
+              
             </div>
           ))}
         </div>

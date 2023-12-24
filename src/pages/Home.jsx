@@ -3,6 +3,7 @@ import GenrealList from "../components/GenrealList";
 import GlobalAPI from "../apis/GlobalAPI";
 import Banner from "../components/Banner";
 import TreadingGames from "../components/TreadingGames";
+import GamesList from "../components/GamesList";
 
 
 function Home() {
@@ -28,8 +29,9 @@ function Home() {
         <div className="col-span-4 md:col-span-3">
           {games?.length > 0 ? (
             <div>
-              <Banner bannerGame={games[0]} />
+              <Banner bannerGame={games[8]} />
               <TreadingGames gameList={games}/>
+              <GamesList gameList={games}/>
             </div>
           ) : null}
         </div>
