@@ -8,18 +8,18 @@ function TreadingGames({ gameList }) {
   useEffect(() => {
     if (swiperRef.current) {
       new Swiper(swiperRef.current, {
-        slidesPerView: 1, // Show one slide at a time
+        slidesPerView: 1, 
         spaceBetween: 20,
         breakpoints: {
           768: {
-            slidesPerView: 2, // Show two slides at a time on larger screens
+            slidesPerView: 2, 
           },
           1024: {
-            slidesPerView: 4, // Show four slides at a time on wider screens
+            slidesPerView: 4, 
           },
         },
         loop: true,
-        // Add any other Swiper configurations here
+        
       });
     }
   }, [gameList]);

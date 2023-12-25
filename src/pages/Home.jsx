@@ -13,14 +13,12 @@ function Home() {
 
   function getGamesList() {
     GlobalAPI.getGames.then((res) => {
-      console.log(res.data.results);
       setGames(res.data.results);
     });
   }
 
   function getGamesByID(id) {
     GlobalAPI.getGamesByID(id).then((res) => {
-      console.log(res.data.results);
       setGamesByGenre(res.data.results)
     })
   }
